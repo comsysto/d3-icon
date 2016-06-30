@@ -15,10 +15,13 @@
     "url": "https://github.com/comsysto/d3-icon.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup -f umd -n d3 -o build/d3-icon.js -- index.js",
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -g d3-path:d3 -n d3 -o build/d3-icon.js -- index.js",
     "test": "tape 'test/**/*-test.js'",
     "prepublish": "npm run test && uglifyjs build/d3-icon.js -c -m -o build/d3-icon.min.js",
     "postpublish": "zip -j build/d3-icon.zip -- LICENSE README.md build/d3-icon.js build/d3-icon.min.js"
+  },
+  "dependencies": {
+    "d3-path": "1"
   },
   "devDependencies": {
     "rollup": "0.27",

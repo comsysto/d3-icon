@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>D3 Icon Test Page</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="build/d3-icon.js"></script>
+</head>
+<body>
+
+<script>
+
+    var svgContainer = d3.select('body').append('svg').attr("width", 400).attr("height", 400);
+
+    var heartIcon = d3.icon({type: 'heart'});
+
+    svgContainer.append('path')
+            .attr("transform", "translate(20,20)")
+            .attr('d', heartIcon)
+            .attr("stroke", "red")
+            .attr("stroke-width", 2)
+            .attr("fill", "none");
+
+</script>
+
+
+</body>
+</html>
